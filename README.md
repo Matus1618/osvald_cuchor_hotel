@@ -1,0 +1,1 @@
+# osvald_cuchor_hotel
