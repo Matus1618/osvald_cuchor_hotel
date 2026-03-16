@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0a0a0a; /* Luxusná čierna */
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Cinzel', serif; /* Elegantný nadpisový font */
+    color: #d4af37; /* Zlatá farba */
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Navigácia */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #111111;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3); /* Jemný zlatý pásik */
+}
+
+.navbar-brand {
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Tlačidlá */
+.btn-gold {
+    background-color: #d4af37;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-gold:hover {
+    background-color: #b5952f;
+}
+
+.btn-outline {
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+}
+
+/* Hero sekcia (Úvodný text) */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    letter-spacing: 8px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Rezervačný panel */
+.booking-panel {
+    background-color: #151515;
+    border: 1px solid #333;
+    padding: 25px;
+    max-width: 900px;
+    margin: 20px auto 50px;
+    border-radius: 8px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 150px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    color: #d4af37;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px;
+    background-color: #0a0a0a;
+    border: 1px solid #444;
+    color: #ffffff;
+    border-radius: 4px;
+    outline: none;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: #d4af37;
+}
+
+/* Správna farba pre roletové menu */
+.form-group select option {
+    background-color: #111111;
+    color: #d4af37;
+}
+
+/* Chybové hlášky */
+.alert {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+.alert-error {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid red;
+    color: #ff4d4d;
+}
+
+/* Vlastný dizajn pre kalendár (Flatpickr prefarbený do Luxury) */
+.flatpickr-calendar {
+    background: #111 !important;
+    border: 1px solid #d4af37 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.8) !important;
+}
+.flatpickr-months .flatpickr-month,
+.flatpickr-months .flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month {
+    color: #d4af37 !important;
+    fill: #d4af37 !important;
+}
+.flatpickr-weekday { color: #fff !important; }
+.flatpickr-day { color: #fff !important; }
+.flatpickr-day:hover, .flatpickr-day:focus {
+    background: #333 !important;
+    border-color: #d4af37 !important;
+}
+.flatpickr-day.selected {
+    background: #d4af37 !important;
+    color: #000 !important;
+    border-color: #d4af37 !important;
+}
+/* Úprava pre pole Špeciálne požiadavky */
+textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #0a0a0a;
+    border: 1px solid #444;
+    color: #ffffff;
+    border-radius: 4px;
+    outline: none;
+    resize: vertical;
+    font-family: inherit;
+}
+textarea:focus { border-color: #d4af37; }
+/* Oprava roletového menu pre výber mesiaca */
+.flatpickr-monthDropdown-months {
+    background: #111 !important;
+    color: #d4af37 !important;
+}
+
+/* Zvýraznenie poľa pre výber roka (aby bolo jasné, že sa dá prepísať) */
+.flatpickr-current-month input.cur-year {
+    color: #d4af37 !important;
+    font-weight: bold !important;
+}
+
+/* Skrytie dní, ktoré presahujú do iného mesiaca */
+.flatpickr-day.prevMonthDay, 
+.flatpickr-day.nextMonthDay {
+    visibility: hidden !important;
+}
+
+/* Pätička (Footer) - Luxury Style */
+.footer {
+    background-color: #0a0a0a;
+    border-top: 1px solid #333;
+    padding: 60px 20px 20px;
+    margin-top: 80px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-col h4 {
+    color: #d4af37;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-col p {
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: #aaa;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: #d4af37;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid #222;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #666;
+}
+
+/* ========================================= */
+/* OPRAVA: VIDEO V HLAVIČKE                  */
+/* ========================================= */
+.hero-video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Výška hlavičky */
+    overflow: hidden;
+}
+
+.hero-video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Zabezpečí, že video vyplní priestor bez deformácie */
+    z-index: 0;
+}
+
+/* ========================================= */
+/* OPRAVA: MRIEŽKA A OBRÁZKY IZIEB           */
+/* ========================================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Obrázok si udrží pomer strán a oreže sa */
+    display: block;
+}
+
+/* ========================================= */
+/* HAMBURGER MENU (ROZTVÁRAČ)                */
+/* ========================================= */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+}
+
+/* Tenší a elegantnejší hamburger */
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 2px; /* Zmenšené z 3px na 2px */
+    background-color: #d4af37;
+    transition: all 0.3s ease;
+}
+
+/* Užšia roletka s textom bližšie k ľavému okraju */
+.nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0a0a0a;
+    width: 200px; /* Zúžené z 250px */
+    flex-direction: column;
+    padding: 20px 15px; /* Menšie vnútorné odsadenie, text bude viac vľavo */
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    border-radius: 0 0 8px 0;
+    display: none;
+    gap: 15px;
+    z-index: 99;
+}
+/* Toto pravidlo menu reálne zobrazí po kliknutí */
+.nav-links.active {
+    display: flex;
+}
+
+/* Elegantné textové odkazy (namiesto starých tlačidiel) */
+.menu-link {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+    text-align: left;
+}
+
+.menu-link:hover {
+    color: #d4af37;
+}
+
+/* ========================================= */
+/* GALÉRIA A EFEKTY                          */
+/* ========================================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease; /* Pripraví plynulú animáciu */
+}
+
+/* Keď zákazník prejde myšou na obrázok, fotka sa jemne priblíži */
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* ========================================= */
+/* LIGHTBOX (MODÁLNE OKNO PRE GALÉRIU)       */
+/* ========================================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.8); opacity: 0;} 
+    to {transform: scale(1); opacity: 1;}
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+/* ========================================= */
+/* KONTAKT A MAPA                            */
+/* ========================================= */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #111111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden; /* Zabezpečí, aby mapa nepretŕčala cez zaoblené rohy */
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-map {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-map iframe {
+    display: block;
+    width: 100%;
+    min-height: 350px; /* Aby mapa nebola na mobiloch príliš úzka */
+}
+/* ========================================= */
+/* STRED VIDEA, TEXT A ZATMAVENIE (HERO)     */
+/* ========================================= */
+
+/* Zatmavovacia vrstva na video (o 20%) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.40); /* Zatmaví video o 20% */
+    z-index: 1; 
+}
+
+/* Dokonalé vycentrovanie obsahu na stred videa */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2; /* Text je nad zatmavovacou vrstvou */
+    width: 100%;
+}
+
+/* Zlatý nadpis so zlatou podčiarou */
+.hero-content h1 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37; 
+    font-size: 60px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    display: inline-block; /* Aby bola podčiara presne pod textom */
+    border-bottom: 2px solid #d4af37; /* Táto vlastnosť tvorí zlatú čiaru */
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.9); /* Silnejší tieň pre čitateľnosť */
+    opacity: 0; 
+    animation: fadeIn 1.5s ease forwards;
+}
+
+/* Biely podnadpis */
+.hero-content p {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.9);
+    opacity: 0; 
+    animation: fadeIn 1.5s ease 0.5s forwards; /* Zapne sa s jemným oneskorením */
+}
+
+/* Animácia pre plynulý nábeh */
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
